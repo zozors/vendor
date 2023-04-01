@@ -37,29 +37,29 @@
         </tr>
     </table> -->
 <br>
-    @if ($sale->products != null)
-        <ul class="products-container">
-            @foreach ($sale->products as $product)
+    @if ($sales->products != null)
+        <ul class="product-container">
+            @foreach ($sales->products as $product)
                 <li>
-                    <form action="/buy" id="buyform_{{$products->id}}" method="post">
+                    <form action="/buy" id="buyform_{{$product->id}}" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{$produts->id}}">
-                        <input type="hidden" name="company_id" value="{{$products->company_id}}">
-                        <input type="hidden" name="product_name" value="{{$products->product_name}}">
-                        <input type="hidden" name="price" value="{{$products->price}}">
+                        <input type="hidden" name="company_id" value="{{$product->company_id}}">
+                        <input type="hidden" name="product_name" value="{{$product->product_name}}">
+                        <input type="hidden" name="price" value="{{$product->price}}">
                         <!-- <input type="hidden" name="money" value="{{$sale->money}}"> -->
                         <img class="img_path" src="data:image/jpeg;base64,{{$products->img_path}}" alt="image">
-                        <div class="product-name">{{$products->name}}</div>
+                        <div class="product-name">{{$product->name}}</div>
                         <div class="cold-msg">つめた〜い</div>
-                        <div class="product-price">{{$products->price}}円</div>
+                        <div class="product-price">{{$product->price}}円</div>
                         <div class="push-button-area">
-                        @if (0 < $products->stock)
+                        @if (0 < $product->stock)
                             <input class="push-button" type="submit" value="PUSH">
                         @else
                             <input class="push-button-disabled" type="submit" value="SOLD" disabled>
                         @endif
                         </div>
-                        <div class="product-stock">在庫：{{$products->stock}}個</div>
+                        <div class="product-stock">在庫：{{$product->stock}}個</div>
                     </form>
                 </li>
             @endforeach

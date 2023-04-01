@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Products;
-use App\Sales;
+use App\Models\Product;
+use App\Models\Company;
 use App\Http\Requests\BuyRequest;
 use Illuminate\Http\Request;
 
@@ -12,8 +12,8 @@ class BuyController extends Controller
     public function index(Request $request)
     {
         // クエリパラメタから対象の自動販売機を取得
-        $sales = Sales::where('id', $request->id)->first();
-        return view('buy.index', ['sales' => $sales]);
+        $company = Company::where('id', $request->id)->first();
+        return view('buy.index', ['companies' => $company]);
     }
 
     // public function buy(BuyRequest $request)

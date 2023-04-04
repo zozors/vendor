@@ -18,7 +18,6 @@ class CreateCompaniesTable extends Migration
             $table->string('company_name');
             $table->string('street_address');
             $table->string('representative_name');
-            $table->integer('money');
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ class BuyController extends Controller
     {
         // クエリパラメタから対象の自動販売機を取得
         $company = Company::where('id', $request->id)->first();
-        return view('buy.index', ['companies' => $company]);
+        return view('buy.index', ['company' => $company]);
     }
 
     // public function buy(BuyRequest $request)

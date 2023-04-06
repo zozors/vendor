@@ -1,6 +1,6 @@
 @extends('layouts.productsapp')
 
-@section('title', '自動販売機ツール*')
+@section('title', '自動販売機ツール')
 
 @section('message')
     @if (count($errors) > 0)

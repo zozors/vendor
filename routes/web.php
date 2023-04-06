@@ -23,4 +23,3 @@ Route::post('edit', 'EditController@edit');
 
 Route::get('buy', 'BuyController@index');
 Route::post('buy', 'BuyController@buy');
-Route::post('buy/money', 'BuyController@money');

@@ -16,6 +16,9 @@
 
                     You are logged in!
                 </div>
+                <button class="list" onclick="location.href='{{ url('/buy') }}'">
+                    購入画面へ
+                </button>
             </div>
         </div>
     </div>
